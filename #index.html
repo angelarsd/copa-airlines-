@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    th,
+    td {
+      padding: 10px 20px;
+      border: 1px solid #000;
+    }
+  </style>
+
+</head>
+
+<body id="body">
+  <script defer>
+    let table = document.createElement('table');
+    let thead = document.createElement('thead');
+    let tbody = document.createElement('tbody');
+
+    let th = document.createElement('th');
+    th.innerHTML = "";
+    thead.appendChild(th);
+
+    const response = fetch('http://localhost:3000/', {
+      mode: 'no-cors',
+    }).then(response => response.json())
+      .then(data => console.log(data));
+
+    const data = {
+      "currency": {
+        "code": "USD",
+        "decimals": 2
+      },
+      "promoCodeApplied": false,
+      "inboundResults": [
+        {
+          "date": "2023-01-14",
+          "outboundResults": [
+            {
+              "date": "2022-12-10",
+              "price": 1294.6,
+              "originalPrice": 1294.6,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-11",
+              "price": 1294.6,
+              "originalPrice": 1294.6,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-12",
+              "price": 1294.6,
+              "originalPrice": 1294.6,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-13",
+              "price": 1294.6,
+              "originalPrice": 1294.6,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-14",
+              "price": 1425.4,
+              "originalPrice": 1425.4,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-15",
+              "price": 1689.9,
+              "originalPrice": 1689.9,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-16",
+              "price": 1689.9,
+              "originalPrice": 1689.9,
+              "isLowestPrice": false
+            }
+          ]
+        },
+        {
+          "date": "2023-01-15",
+          "outboundResults": [
+            {
+              "date": "2022-12-10",
+              "price": 1294.6,
+              "originalPrice": 1294.6,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-11",
+              "price": 1294.6,
+              "originalPrice": 1294.6,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-12",
+              "price": 1294.6,
+              "originalPrice": 1294.6,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-13",
+              "price": 1294.6,
+              "originalPrice": 1294.6,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-14",
+              "price": 1425.4,
+              "originalPrice": 1425.4,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-15",
+              "price": 1689.9,
+              "originalPrice": 1689.9,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-16",
+              "price": 1689.9,
+              "originalPrice": 1689.9,
+              "isLowestPrice": false
+            }
+          ]
+        },
+        {
+          "date": "2023-01-16",
+          "outboundResults": [
+            {
+              "date": "2022-12-10",
+              "price": 1294.6,
+              "originalPrice": 1294.6,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-11",
+              "price": 1294.6,
+              "originalPrice": 1294.6,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-12",
+              "price": 1294.6,
+              "originalPrice": 1294.6,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-13",
+              "price": 1294.6,
+              "originalPrice": 1294.6,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-14",
+              "price": 1425.4,
+              "originalPrice": 1425.4,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-15",
+              "price": 1689.9,
+              "originalPrice": 1689.9,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-16",
+              "price": 1689.9,
+              "originalPrice": 1689.9,
+              "isLowestPrice": false
+            }
+          ]
+        },
+        {
+          "date": "2023-01-17",
+          "outboundResults": [
+            {
+              "date": "2022-12-10",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-11",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-12",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-13",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-14",
+              "price": 1294.6,
+              "originalPrice": 1294.6,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-15",
+              "price": 1558.2,
+              "originalPrice": 1558.2,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-16",
+              "price": 1558.2,
+              "originalPrice": 1558.2,
+              "isLowestPrice": false
+            }
+          ]
+        },
+        {
+          "date": "2023-01-18",
+          "outboundResults": [
+            {
+              "date": "2022-12-10",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-11",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-12",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-13",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-14",
+              "price": 1294.6,
+              "originalPrice": 1294.6,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-15",
+              "price": 1558.2,
+              "originalPrice": 1558.2,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-16",
+              "price": 1558.2,
+              "originalPrice": 1558.2,
+              "isLowestPrice": false
+            }
+          ]
+        },
+        {
+          "date": "2023-01-19",
+          "outboundResults": [
+            {
+              "date": "2022-12-10",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-11",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-12",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-13",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-14",
+              "price": 1294.6,
+              "originalPrice": 1294.6,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-15",
+              "price": 1558.2,
+              "originalPrice": 1558.2,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-16",
+              "price": 1558.2,
+              "originalPrice": 1558.2,
+              "isLowestPrice": false
+            }
+          ]
+        },
+        {
+          "date": "2023-01-20",
+          "outboundResults": [
+            {
+              "date": "2022-12-10",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-11",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-12",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-13",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-14",
+              "price": 1294.6,
+              "originalPrice": 1294.6,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-15",
+              "price": 1558.2,
+              "originalPrice": 1558.2,
+              "isLowestPrice": false
+            },
+            {
+              "date": "2022-12-16",
+              "price": 1558.2,
+              "originalPrice": 1558.2,
+              "isLowestPrice": false
+            }
+          ]
+        },
+        {
+          "date": "2023-01-21",
+          "outboundResults": [
+            {
+              "date": "2022-12-03",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-04",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-05",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-06",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-07",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-08",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-09",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            }
+          ]
+        },
+        {
+          "date": "2023-01-22",
+          "outboundResults": [
+            {
+              "date": "2022-12-03",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-04",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-05",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-06",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-07",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-08",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-09",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            }
+          ]
+        },
+        {
+          "date": "2023-01-23",
+          "outboundResults": [
+            {
+              "date": "2022-12-03",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-04",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-05",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-06",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-07",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-08",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-09",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            }
+          ]
+        },
+        {
+          "date": "2023-01-24",
+          "outboundResults": [
+            {
+              "date": "2022-12-03",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-04",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-05",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-06",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-07",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-08",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-09",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            }
+          ]
+        },
+        {
+          "date": "2023-01-25",
+          "outboundResults": [
+            {
+              "date": "2022-12-03",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-04",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-05",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-06",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-07",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-08",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-09",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            }
+          ]
+        },
+        {
+          "date": "2023-01-26",
+          "outboundResults": [
+            {
+              "date": "2022-12-03",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-04",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-05",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-06",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-07",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-08",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-09",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            }
+          ]
+        },
+        {
+          "date": "2023-01-27",
+          "outboundResults": [
+            {
+              "date": "2022-12-03",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-04",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-05",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-06",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-07",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-08",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            },
+            {
+              "date": "2022-12-09",
+              "price": 1162.8,
+              "originalPrice": 1162.8,
+              "isLowestPrice": true
+            }
+          ]
+        }
+      ]
+    }
+    var minPrice = 999999;
+    var departureDate = "2022-12-01";
+    var returnDate = "2023-12-31";
+
+    data.inboundResults.forEach((item, i) => {
+      let tr = document.createElement('tr');
+      let th = document.createElement('th');
+      th.innerHTML = item.date;
+      tr.appendChild(th);
+
+      item.outboundResults.forEach((outbound, j) => {
+        if (i === 0) {
+          let th = document.createElement('th');
+          th.innerHTML = outbound.date;
+          thead.appendChild(th);
+        }
+
+        let td = document.createElement('th');
+        td.innerHTML = outbound.price;
+        tr.appendChild(td);
+
+        if (outbound.price <= minPrice && (outbound.date >= departureDate || item.date <= returnDate)) {
+          minPrice = outbound.price
+          departureDate = outbound.date
+          returnDate = item.date;
+        }
+      });
+      tbody.appendChild(tr);
+    });
+
+    table.appendChild(thead);
+    table.appendChild(tbody);
+    // Adding the entire table to the body tag
+    document.getElementById('body').appendChild(table);
+
+    console.log(">>>", departureDate, returnDate, minPrice);
+
+  </script>
+</body>
+
+</html>
